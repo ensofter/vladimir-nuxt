@@ -1,28 +1,39 @@
 from django.shortcuts import render
-from .serializers import ServiceSerializer
-from .models import Service
+from .serializers import ServiceSerializer, TagSerializer, AsideSerializer
+from .models import Service, Tag
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.http import Http404
+from rest_framework import generics
+from rest_framework import pagination
 
-class ServiceView(APIView):
-    """
-    List of all Services
-    """
-    def get(self, request, format=None):
-        services = Service.objects.all()
-        serializer = ServiceSerializer(services, many=True)
-        return Response(serializer.data)
+class PageNumberSetPagination(pagination.PageNumberPagination):
+    page_size = 4
+    page_size_query_param = 'page_size'
+    ordering = 'created'
 
-class ServiceDetailView(APIView):
+class ServiceView(generics.ListAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+    pagination_class = PageNumberSetPagination
 
-    def get_object(self, slug):
-        try:
-            return Service.objects.get(slug=slug)
-        except Service.DoesNotExist:
-            raise Http404
+class ServiceDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
+    lookup_field = 'slug'
 
-    def get(self, request, slug, format=None):
-        service = self.get_object(slug)
-        serializer = ServiceSerializer(service)
-        return Response(serializer.data)
+class TagView(generics.ListAPIView):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+class TagDetailView(generics.ListAPIView):
+    serializer_class = ServiceSerializer
+    pagination_class = PageNumberSetPagination
+
+    def get_queryset(self):
+        tag_slug = self.kwargs['tag_slug']
+        return Service.objects.filter(tag__tag_slug=tag_slug)
+
+class AsideView(generics.ListAPIView):
+    queryset = Service.objects.all().order_by('-id')[:6]
+    serializer_class = AsideSerializer

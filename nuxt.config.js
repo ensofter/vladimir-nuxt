@@ -36,6 +36,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    {src: "~/plugins/swiper"}
   ],
   /*
   ** Auto import components
@@ -46,6 +47,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/date-fns'
   ],
   /*
   ** Nuxt.js modules
@@ -54,6 +56,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    'nuxt-lazy-load'
   ],
   /*
   ** Axios module configuration

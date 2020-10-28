@@ -15,7 +15,10 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 import nuxt_plugin_plugin_b8c27c22 from 'nuxt_plugin_plugin_b8c27c22' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_workbox_1a5e793e from 'nuxt_plugin_workbox_1a5e793e' // Source: ./workbox.js (mode: 'client')
 import nuxt_plugin_nuxticons_eb610e3a from 'nuxt_plugin_nuxticons_eb610e3a' // Source: ./nuxt-icons.js (mode: 'all')
+import nuxt_plugin_vlazyload_f13c7e9a from 'nuxt_plugin_vlazyload_f13c7e9a' // Source: ./v-lazy-load.js (mode: 'all')
 import nuxt_plugin_axios_7a4dc8f6 from 'nuxt_plugin_axios_7a4dc8f6' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_datefns_97d097b2 from 'nuxt_plugin_datefns_97d097b2' // Source: ./date-fns.js (mode: 'all')
+import nuxt_plugin_swiper_3a1c5924 from 'nuxt_plugin_swiper_3a1c5924' // Source: ../plugins/swiper (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -180,8 +183,20 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_nuxticons_eb610e3a(app.context, inject)
   }
 
+  if (typeof nuxt_plugin_vlazyload_f13c7e9a === 'function') {
+    await nuxt_plugin_vlazyload_f13c7e9a(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_axios_7a4dc8f6 === 'function') {
     await nuxt_plugin_axios_7a4dc8f6(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_datefns_97d097b2 === 'function') {
+    await nuxt_plugin_datefns_97d097b2(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_swiper_3a1c5924 === 'function') {
+    await nuxt_plugin_swiper_3a1c5924(app.context, inject)
   }
 
   // Lock enablePreview in context

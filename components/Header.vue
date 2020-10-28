@@ -3,7 +3,7 @@
     <div class="center">
       <nav>
         <nuxt-link to="/">Главная</nuxt-link>
-        <nuxt-link to="/uslugi">Услуги</nuxt-link>
+        <nuxt-link to="/service">Услуги</nuxt-link>
         <nuxt-link to="/keisi">Кейсы</nuxt-link>
         <nuxt-link to="/blog">Блог</nuxt-link>
         <nuxt-link to="/kontakti">Контакты</nuxt-link>

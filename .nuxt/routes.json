@@ -1,8 +1,58 @@
 [
   {
+    "name": "service",
+    "path": "/service",
+    "component": "/Users/rmfalx/WebstormProjects/vladimir_nuxt/pages/service/index.vue",
+    "chunkName": "pages/service/index",
+    "_name": "_35b3531f"
+  },
+  {
+    "name": "service-blog",
+    "path": "/service/blog",
+    "component": "/Users/rmfalx/WebstormProjects/vladimir_nuxt/pages/service/blog.vue",
+    "chunkName": "pages/service/blog",
+    "_name": "_4f66a5e5"
+  },
+  {
+    "name": "service-tag1",
+    "path": "/service/tag1",
+    "component": "/Users/rmfalx/WebstormProjects/vladimir_nuxt/pages/service/tag1.vue",
+    "chunkName": "pages/service/tag1",
+    "_name": "_46b7879a"
+  },
+  {
+    "name": "service-tag2",
+    "path": "/service/tag2",
+    "component": "/Users/rmfalx/WebstormProjects/vladimir_nuxt/pages/service/tag2.vue",
+    "chunkName": "pages/service/tag2",
+    "_name": "_46c59f1b"
+  },
+  {
+    "name": "service-tag3",
+    "path": "/service/tag3",
+    "component": "/Users/rmfalx/WebstormProjects/vladimir_nuxt/pages/service/tag3.vue",
+    "chunkName": "pages/service/tag3",
+    "_name": "_46d3b69c"
+  },
+  {
+    "name": "service-tag4",
+    "path": "/service/tag4",
+    "component": "/Users/rmfalx/WebstormProjects/vladimir_nuxt/pages/service/tag4.vue",
+    "chunkName": "pages/service/tag4",
+    "_name": "_46e1ce1d"
+  },
+  {
+    "name": "service-slug",
+    "path": "/service/:slug",
+    "component": "/Users/rmfalx/WebstormProjects/vladimir_nuxt/pages/service/_slug.vue",
+    "chunkName": "pages/service/_slug",
+    "_name": "_33fcb1d7"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/rmfalx/WebstormProjects/vladimir_nuxt/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_db2e360e"
   }
 ]
